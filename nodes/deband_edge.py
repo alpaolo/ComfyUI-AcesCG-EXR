@@ -96,7 +96,7 @@ class AcesCgDebandEdge:
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("image",)
     FUNCTION = "deband"
-    CATEGORY = "AcesCg"
+    CATEGORY = "Aipermedia-AcesCg"
     DESCRIPTION = (
         "Edge-protect deband with spatial diffuse/dither (haasn-style). "
         "Edge Threshold, Radius, Post Refine, Display Edge. Optional mask."

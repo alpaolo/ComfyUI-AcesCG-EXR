@@ -76,7 +76,7 @@ class AcesCgInspectImage:
     RETURN_TYPES = ("IMAGE", "STRING")
     RETURN_NAMES = ("image", "report")
     FUNCTION = "inspect"
-    CATEGORY = "AcesCg"
+    CATEGORY = "Aipermedia-AcesCg"
     DESCRIPTION = (
         "Print float IMAGE stats (shape, min/max, [0,1] check, luma unique count, "
         "neighbor diffs, center 4x4). Full HxWx3 dump would flood the log."

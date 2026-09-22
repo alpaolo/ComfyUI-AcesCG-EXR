@@ -12,11 +12,11 @@ from ..core.exr_write import padded_exr_name, write_exr_rgb
 
 
 def _resolve_folder(folder: str) -> Path:
-    """Absolute path as-is; relative path under Comfy output; empty -> output/acescg_exr."""
+    """Absolute path as-is; relative path under Comfy output; empty -> output/Aipermedia-AcesCg."""
     output_root = Path(folder_paths.get_output_directory()).resolve()
     text = (folder or "").strip()
     if not text:
-        return output_root / "acescg_exr"
+        return output_root / "Aipermedia-AcesCg"
     path = Path(text)
     if not path.is_absolute():
         path = (output_root / path).resolve()
@@ -41,7 +41,7 @@ class AcesCgSaveEXR:
                 "folder": (
                     "STRING",
                     {
-                        "default": "acescg_exr",
+                        "default": "Aipermedia-AcesCg",
                         "tooltip": (
                             "Output folder. Relative paths are under Comfy output/; "
                             "absolute paths (e.g. I:/VFX/out) are used as-is."
@@ -51,7 +51,7 @@ class AcesCgSaveEXR:
                 "filename_prefix": (
                     "STRING",
                     {
-                        "default": "acescg",
+                        "default": "Aipermedia-AcesCg",
                         "tooltip": "Base name before the frame number: prefix.0001.exr",
                     },
                 ),
@@ -82,7 +82,7 @@ class AcesCgSaveEXR:
     RETURN_TYPES = ("STRING",)
     RETURN_NAMES = ("paths",)
     FUNCTION = "save"
-    CATEGORY = "AcesCg"
+    CATEGORY = "Aipermedia-AcesCg"
     OUTPUT_NODE = True
     DESCRIPTION = (
         "Write float RGB to OpenEXR float32 (linear, no OETF). "

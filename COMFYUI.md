@@ -13,15 +13,15 @@ Reference CLI : `H:\ComfyUI_windows_portable\ComfyUI`.
 
 **Un processo = un nodo Comfy = una scatola sul canvas.**
 
-- **Stesso gruppo menu:** tutti i nodi custom sotto la categoria Comfy **`AcesCg`** (un solo ramo nel Add Node), così li trovi insieme.
+- **Stesso gruppo menu:** tutti i nodi custom sotto la categoria Comfy **`Aipermedia-AcesCg`** (un solo ramo nel Add Node), così li trovi insieme.
 - **Nodi separati:** ogni processo è una classe / box diverso. **NON** un mega-nodo `AcesCg Pipeline` / `Run All`.
 - Il **grafo** collega i box; sostituisce `workflow.json` come orchestratore.
-- `ComfyUI-ACESCG` = pacchetto su disco; **`AcesCg`** = etichetta di gruppo in UI.
+- `Aipermedia-AcesCg` = pacchetto su disco; **`Aipermedia-AcesCg`** = etichetta di gruppo in UI.
 
 In ogni classe nodo:
 
 ```python
-CATEGORY = "AcesCg"   # stesso gruppo per tutti; sottocartelle ok: "AcesCg/IO", "AcesCg/Color", ...
+CATEGORY = "Aipermedia-AcesCg"   # stesso gruppo per tutti
 ```
 
 | Processo | Nodo (titolo UI) | `CATEGORY` | File tipico |
@@ -68,7 +68,7 @@ Nodi **default** Comfy (Load Image/Video, Resize, …) fuori da `AcesCg`, dove n
 
 ```
 H:\ComfyUI_windows_portable\ComfyUI\custom_nodes\
-└── ComfyUI-ACESCG\              ← PACKAGE (non “un nodo”)
+└── Aipermedia-AcesCg\              ← PACKAGE (non “un nodo”)
     ├── __init__.py              ← registra N classi in NODE_CLASS_MAPPINGS
     ├── nodes\
     │   ├── decode_u8.py         ← 1 nodo: Decode U8
@@ -118,7 +118,7 @@ Sei (o più) nodi in menu Comfy, **non uno**.
 [Save EXR]                      ← AcesCg → EXR out
 ```
 
-Tutti questi box: **CATEGORY = `"AcesCg"`**, classi distinte.  
+Tutti questi box: **CATEGORY = `"Aipermedia-AcesCg"`**, classi distinte.  
 Se togli Deband Edge, colleghi OCIO → Save/Preview.  
 Se togli Depth, il grafo è sbagliato (float non deve nascere altrove).
 

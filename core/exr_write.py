@@ -36,7 +36,7 @@ def write_exr_rgb(path: Path, rgb: np.ndarray) -> Path:
 
 def padded_exr_name(prefix: str, frame_index: int, padding: int) -> str:
     """Build name like 'plate.0001.exr'."""
-    stem = (prefix or "acescg").strip().replace("\\", "/").split("/")[-1]
+    stem = (prefix or "Aipermedia-AcesCg").strip().replace("\\", "/").split("/")[-1]
     if stem.lower().endswith(".exr"):
         stem = stem[:-4]
     pad = max(1, int(padding))

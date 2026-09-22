@@ -151,7 +151,7 @@ class AcesCgFillDither:
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("image",)
     FUNCTION = "process"
-    CATEGORY = "AcesCg"
+    CATEGORY = "Aipermedia-AcesCg"
     DESCRIPTION = (
         "Stair soften + dither on float32. working_space=rec709 (display) or linear "
         "(scene). Optional mask. Prefer masks on textured areas; ffmpeg deband is "

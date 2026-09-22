@@ -31,7 +31,7 @@ class AcesCgDepthConversion:
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("display_float",)
     FUNCTION = "convert"
-    CATEGORY = "AcesCg"
+    CATEGORY = "Aipermedia-AcesCg"
     DESCRIPTION = (
         "Promote 8/16-bit display codes to float32 [0,1]. "
         "No fill/dither — use Fill Dither (and/or Deband Edge) as separate nodes."

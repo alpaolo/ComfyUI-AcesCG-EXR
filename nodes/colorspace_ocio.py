@@ -24,7 +24,7 @@ class AcesCgOCIOConvert:
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("scene_linear",)
     FUNCTION = "convert"
-    CATEGORY = "AcesCg"
+    CATEGORY = "Aipermedia-AcesCg"
     DESCRIPTION = (
         "OCIO: Rec.709/sRGB-encoded display -> scene-linear AP0 (ACES2065-1) or AP1 (ACEScg). "
         "ACES 1.5 uses the 1.3 CG config (no official 1.5 CG OCIO). No view/ODT."

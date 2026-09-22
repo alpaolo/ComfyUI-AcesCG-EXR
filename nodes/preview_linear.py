@@ -47,7 +47,7 @@ class AcesCgPreviewLinear:
     RETURN_TYPES = ("IMAGE",)
     RETURN_NAMES = ("image",)
     FUNCTION = "preview"
-    CATEGORY = "AcesCg"
+    CATEGORY = "Aipermedia-AcesCg"
     OUTPUT_NODE = True
     DESCRIPTION = (
         "Preview float RGB without gamma/OETF. UI PNG is linear*exposure clamped to 8-bit; "
