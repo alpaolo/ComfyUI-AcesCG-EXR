@@ -29,7 +29,7 @@ CATEGORY = "AcesCg"   # stesso gruppo per tutti; sottocartelle ok: "AcesCg/IO", 
 | Decode 8-bit | Decode U8 | `AcesCg` | `nodes/decode_u8.py` |
 | Depth 8→float (+ fill) | Depth Conversion | `AcesCg` | `nodes/depth_conversion.py` |
 | Color OCIO | OCIO Convert | `AcesCg` | `nodes/colorspace_ocio.py` |
-| Deband plateau | Deband Plateau | `AcesCg` | `nodes/deband_plateau.py` |
+| Deband edge | Deband Edge | `AcesCg` | `nodes/deband_edge.py` |
 | Cast float16 (opz.) | Cast Float16 | `AcesCg` | `nodes/bit_depth_cast.py` |
 | Preview linear | Preview Linear | `AcesCg` | `nodes/preview_linear.py` |
 | Save EXR | Save EXR | `AcesCg` | `nodes/save_exr.py` |
@@ -42,7 +42,7 @@ Add Node
     ├── Decode U8            ← nodi separati
     ├── Depth Conversion
     ├── OCIO Convert
-    ├── Deband Plateau
+    ├── Deband Edge
     ├── Cast Float16
     ├── Preview Linear
     └── Save EXR
@@ -74,7 +74,7 @@ H:\ComfyUI_windows_portable\ComfyUI\custom_nodes\
     │   ├── decode_u8.py         ← 1 nodo: Decode U8
     │   ├── depth_conversion.py  ← 1 nodo: Depth Conversion
     │   ├── colorspace_ocio.py   ← 1 nodo: OCIO Convert
-    │   ├── deband_plateau.py    ← 1 nodo: Deband Plateau
+    │   ├── deband_edge.py       ← 1 nodo: Deband Edge
     │   ├── preview_linear.py    ← 1 nodo: Preview Linear
     │   ├── save_exr.py          ← 1 nodo: Save EXR
     │   └── bit_depth_cast.py    ← 1 nodo: Cast Float16 (opz.)
@@ -89,7 +89,7 @@ NODE_CLASS_MAPPINGS = {
   "ACESCG_DecodeU8": ...,
   "ACESCG_DepthConversion": ...,
   "ACESCG_OCIOConvert": ...,
-  "ACESCG_DebandPlateau": ...,
+  "AcesCgDebandEdge": ...,
   "ACESCG_PreviewLinear": ...,
   "ACESCG_SaveEXR": ...,
 }
@@ -111,7 +111,7 @@ Sei (o più) nodi in menu Comfy, **non uno**.
 [OCIO Convert]                  ← AcesCg / processo 3
         │  SCENE_LINEAR
         ▼
-[Deband Plateau]                ← AcesCg / processo 4 (opzionale)
+[Deband Edge]                   ← AcesCg / processo 4 (opzionale)
         │  SCENE_LINEAR
         ├──────────────────────► [Preview Linear]   ← AcesCg
         ▼
@@ -119,7 +119,7 @@ Sei (o più) nodi in menu Comfy, **non uno**.
 ```
 
 Tutti questi box: **CATEGORY = `"AcesCg"`**, classi distinte.  
-Se togli Deband Plateau, colleghi OCIO → Save/Preview.  
+Se togli Deband Edge, colleghi OCIO → Save/Preview.  
 Se togli Depth, il grafo è sbagliato (float non deve nascere altrove).
 
 ---
@@ -164,7 +164,7 @@ Preview Linear e Save EXR: **nessuna** OETF/sRGB/ACES Output di default.
 3. Nodo **Depth Conversion**  
 4. Nodo **OCIO Convert**  
 5. Nodo **Save EXR**  
-6. Nodo **Deband Plateau**  
+6. Nodo **Deband Edge**  
 7. Nodo **Preview Linear**  
 8. Example workflow Comfy (JSON grafo con **tutti** i box collegati)
 

@@ -34,7 +34,7 @@ class AcesCgDepthConversion:
     CATEGORY = "AcesCg"
     DESCRIPTION = (
         "Promote 8/16-bit display codes to float32 [0,1]. "
-        "No fill/dither — use Fill Dither (and/or Deband Plateau) as separate nodes."
+        "No fill/dither — use Fill Dither (and/or Deband Edge) as separate nodes."
     )
 
     def convert(self, image: torch.Tensor, input_bits: str):
